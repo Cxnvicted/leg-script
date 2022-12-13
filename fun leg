@@ -1,0 +1,169 @@
+
+
+
+    local plr = game:GetService("Players").LocalPlayer
+    local character = plr.Character
+    
+    local ogpos = character.HumanoidRootPart.Position
+    
+character.HumanoidRootPart.CFrame = CFrame.new(0,900000000,0)
+wait()
+
+local Character = game.Players.LocalPlayer.Character
+local Hum = {
+    "BodyTypeScale",
+    "BodyProportionScale",
+    "BodyWidthScale",
+    "BodyHeightScale",
+    "BodyDepthScale",
+    "HeadScale"
+}
+
+function Remove()
+    repeat task.wait() until Character.LeftFoot:FindFirstChild("OriginalSize")
+    Character.LeftFoot.OriginalSize:Destroy()
+    Character.LeftLowerLeg.OriginalSize:Destroy()
+    Character.LeftUpperLeg.OriginalSize:Destroy()
+end
+
+Character.LeftLowerLeg.LeftKneeRigAttachment.OriginalPosition:Destroy()
+Character.LeftUpperLeg.LeftKneeRigAttachment.OriginalPosition:Destroy()
+Character.LeftLowerLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+
+for i=1,6 do
+    Remove()
+    Character.Humanoid[Hum[i]]:Destroy()
+end
+
+wait(1)
+
+function getplayer(input)
+    local players = game:GetService("Players")
+
+    for _, v in pairs (players:GetPlayers()) do
+        if v.DisplayName:lower():sub(1, #input) == input:lower() then
+            return players[v.Name]
+        end
+    end
+end
+
+local user = getplayer(skytarget)
+
+
+NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.Name = 1
+local l = game.Players.LocalPlayer.Character["1"]:Clone()
+l.Parent = game.Players.LocalPlayer.Character
+l.Name = "Humanoid"
+wait(0.1)
+game.Players.LocalPlayer.Character["1"]:Destroy()
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+wait(0.1)
+game.Players.LocalPlayer.Character.Animate.Disabled = false
+game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+local function tp(player,player2)
+local char1,char2=player.Character,player2.Character
+if char1 and char2 then
+char1.HumanoidRootPart.CFrame = char2.HumanoidRootPart.CFrame
+end
+end
+local function getout(player,player2)
+local char1,char2=player.Character,player2.Character
+if char1 and char2 then
+char1:MoveTo(char2.Head.Position)
+end
+end
+tp(user, game.Players.LocalPlayer)
+wait(0.1)
+tp(user, game.Players.LocalPlayer)
+wait(0.3)
+getout(game.Players.LocalPlayer, user)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = NOW
+
+
+wait()
+
+    character:BreakJoints()
+    plr.CharacterAdded:Wait()
+    character = plr.Character
+character:WaitForChild('HumanoidRootPart')
+wait(0.15)
+character.HumanoidRootPart.CFrame = CFrame.new(ogpos)
+
+end)
+
+
+Section:NewButton("Reload Character", "", function()
+game.Players.PlayerAdded:connect(function(plr)
+plr.CharacterAdded:connect(function(chr)
+ repeat wait() until chr.Humanoid
+ chr.Humanoid.Died:connect(function()
+  plr.LoadCharacter()
+ end)
+end)
+end)
+
+local plr = game:GetService("Players").LocalPlayer
+local character = plr.Character
+local ogpos = character.HumanoidRootPart.Position
+    character:BreakJoints()
+    plr.CharacterAdded:Wait()
+    character = plr.Character
+character:WaitForChild('HumanoidRootPart')
+wait(0.15)
+character.HumanoidRootPart.CFrame = CFrame.new(ogpos)
+
+end)
+
+Section:NewButton("R15 Goblin Walk", "", function()
+
+local Character = game.Players.LocalPlayer.Character
+local Hum = {
+    "BodyTypeScale",
+    "BodyProportionScale",
+    "BodyWidthScale",
+    "BodyHeightScale",
+    "BodyDepthScale",
+    "HeadScale"
+}
+
+function Remove()
+    repeat task.wait() until Character.LeftFoot:FindFirstChild("OriginalSize")
+    Character.LeftLowerLeg.OriginalSize:Destroy()
+    Character.LeftUpperLeg.OriginalSize:Destroy()
+end
+
+function Remove()
+    repeat task.wait() until Character.RightFoot:FindFirstChild("OriginalSize")
+    Character.RightLowerLeg.OriginalSize:Destroy()
+    Character.RightUpperLeg.OriginalSize:Destroy()
+end
+
+
+Character.LeftLowerLeg.LeftKneeRigAttachment.OriginalPosition:Destroy()
+Character.LeftUpperLeg.LeftKneeRigAttachment.OriginalPosition:Destroy()
+Character.LeftLowerLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+
+Character.RightLowerLeg.RightKneeRigAttachment.OriginalPosition:Destroy()
+Character.RightUpperLeg.RightKneeRigAttachment.OriginalPosition:Destroy()
+Character.RightLowerLeg.RightKneeRigAttachment:Destroy()
+Character.RightUpperLeg.RightKneeRigAttachment:Destroy()
+
+
+
+
+for i=1,6 do
+    Remove()
+    Character.Humanoid[Hum[i]]:Destroy()
+end
+
+game.Players.LocalPlayer.Character.Humanoid.Name = 1
+local l = game.Players.LocalPlayer.Character["1"]:Clone()
+l.Parent = game.Players.LocalPlayer.Character
